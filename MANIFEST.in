@@ -1,0 +1,72 @@
+include README.md
+include README_SMALL.md
+include LICENSE
+include webptools/*.py
+
+include lib/libwebp_linux/bin/anim_diff
+include lib/libwebp_linux/bin/anim_dump
+include lib/libwebp_linux/bin/cwebp
+include lib/libwebp_linux/bin/dwebp
+include lib/libwebp_linux/bin/get_disto
+include lib/libwebp_linux/bin/gif2webp
+include lib/libwebp_linux/bin/img2webp
+include lib/libwebp_linux/bin/vwebp
+include lib/libwebp_linux/bin/webp_quality
+include lib/libwebp_linux/bin/webpinfo
+include lib/libwebp_linux/bin/webpmux
+
+include lib/libwebp_linux/doc/*.html
+include lib/libwebp_linux/doc/*.txt
+include lib/libwebp_linux/include/webp/*.h
+include lib/libwebp_linux/lib/*.a
+
+
+include lib/libwebp_osx/bin/anim_diff
+include lib/libwebp_osx/bin/anim_dump
+include lib/libwebp_osx/bin/cwebp
+include lib/libwebp_osx/bin/dwebp
+include lib/libwebp_osx/bin/get_disto
+include lib/libwebp_osx/bin/gif2webp
+include lib/libwebp_osx/bin/img2webp
+include lib/libwebp_osx/bin/vwebp
+include lib/libwebp_osx/bin/webp_quality
+include lib/libwebp_osx/bin/webpinfo
+include lib/libwebp_osx/bin/webpmux
+
+include lib/libwebp_osx/doc/*.html
+include lib/libwebp_osx/doc/*.txt
+include lib/libwebp_osx/include/webp/*.h
+include lib/libwebp_osx/lib/*.a
+
+
+include lib/libwebp_win32/bin/anim_diff.exe
+include lib/libwebp_win32/bin/anim_dump.exe
+include lib/libwebp_win32/bin/cwebp.exe
+include lib/libwebp_win32/bin/dwebp.exe
+include lib/libwebp_win32/bin/freeglut.dll
+include lib/libwebp_win32/bin/get_disto.exe
+include lib/libwebp_win32/bin/gif2webp.exe
+include lib/libwebp_win32/bin/img2webp.exe
+include lib/libwebp_win32/bin/vwebp.exe
+include lib/libwebp_win32/bin/webp_quality.exe
+include lib/libwebp_win32/bin/webpinfo.exe
+include lib/libwebp_win32/bin/webpmux.exe
+
+include lib/libwebp_win32/include/webp/*.h
+include lib/libwebp_win32/lib/*.lib
+
+include lib/libwebp_win64/bin/anim_diff.exe
+include lib/libwebp_win64/bin/anim_dump.exe
+include lib/libwebp_win64/bin/cwebp.exe
+include lib/libwebp_win64/bin/dwebp.exe
+include lib/libwebp_win32/bin/freeglut.dll
+include lib/libwebp_win64/bin/get_disto.exe
+include lib/libwebp_win64/bin/gif2webp.exe
+include lib/libwebp_win64/bin/img2webp.exe
+include lib/libwebp_win64/bin/vwebp.exe
+include lib/libwebp_win64/bin/webp_quality.exe
+include lib/libwebp_win64/bin/webpinfo.exe
+include lib/libwebp_win64/bin/webpmux.exe
+
+include lib/libwebp_win64/include/webp/*.h
+include lib/libwebp_win64/lib/*.lib
