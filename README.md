@@ -1,4 +1,4 @@
-[Webptools v0.0.1](https://pypi.org/project/webptools/)
+[Webptools v0.0.2](https://pypi.org/project/webptools/)
 
 webptools is a Webp image conversion package for python.
 
@@ -13,6 +13,10 @@ For converting webp image to other image format, please read this documentation 
 For converting gif image to webp, please read this documentation [gif2webp Converter](https://developers.google.com/speed/webp/docs/gif2webp)
 
 For creating animated webp image using webp images, please read this documentation [webpmux Muxer](https://developers.google.com/speed/webp/docs/webpmux)
+
+
+## What's New 
+* Precompiled executables of WebP(v1.0.3) added
 
 
 # How to use

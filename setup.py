@@ -1,11 +1,11 @@
 import setuptools
 
-with open('README_SMALL.md') as f:
+with open('README.md') as f:
     long_description = f.read()
 
 setuptools.setup(
     name="webptools",
-    version="0.0.19",
+    version="0.0.2",
     scripts=['webptools/webplib.py'],
     author="Sai Kumar Yava",
     author_email="saikumar.geek@gmail.com",
@@ -21,8 +21,6 @@ setuptools.setup(
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
