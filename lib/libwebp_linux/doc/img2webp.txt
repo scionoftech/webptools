@@ -14,8 +14,8 @@ DESCRIPTION
 
        img2webp  compresses  a sequence of images using the animated WebP for-
        mat.  Input images can either be PNG, JPEG, TIFF or WebP.  If a  single
-       file  name  (not  starting  with  the character '-') is supplied as the
-       argument, the command line argument are actually  tokenized  from  this
+       file  name (not starting with the character '-') is supplied as the ar-
+       gument, the command line argument  are  actually  tokenized  from  this
        file.   This  allows  for easy scripting or using large number of argu-
        ments.
 

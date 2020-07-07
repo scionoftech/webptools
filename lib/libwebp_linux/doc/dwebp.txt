@@ -27,10 +27,10 @@ OPTIONS
 
        -- string
               Explicitly specify the input file. This option is useful if  the
-              input  file  starts  with  an '-' for instance. This option must
-              appear last.  Any other options afterward will  be  ignored.  If
-              the  input file is "-", the data will be read from stdin instead
-              of a file.
+              input file starts with an '-' for instance. This option must ap-
+              pear last.  Any other options afterward will be ignored. If  the
+              input file is "-", the data will be read from stdin instead of a
+              file.
 
        -bmp   Change the output format to uncompressed BMP.
 
@@ -89,8 +89,8 @@ OPTIONS
 
        -resize, -scale width height
               Rescale  the  decoded  picture to dimension width x height. This
-              option is mostly intended  to  reducing  the  memory  needed  to
-              decode large images, when only a small version is needed (thumb-
+              option is mostly intended to reducing the memory needed  to  de-
+              code  large  images, when only a small version is needed (thumb-
               nail, preview, etc.). Note: scaling is applied  after  cropping.
               If either (but not both) of the width or height parameters is 0,
               the value will be calculated preserving the aspect-ratio.

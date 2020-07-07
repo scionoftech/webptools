@@ -24,8 +24,8 @@ OPTIONS
 
        -- string
               Explicitly specify the input file. This option is useful if  the
-              input  file  starts  with  a  '-' for instance. This option must
-              appear last.  Any other options afterward will be ignored.
+              input  file starts with a '-' for instance. This option must ap-
+              pear last.  Any other options afterward will be ignored.
 
        -h, -help
               A short usage summary.
@@ -42,13 +42,13 @@ OPTIONS
               preserved only if the -exact option is used.
 
        -near_lossless int
-              Specify the level of  near-lossless  image  preprocessing.  This
-              option  adjusts  pixel  values  to help compressibility, but has
-              minimal impact on the visual quality. It triggers lossless  com-
-              pression mode automatically. The range is 0 (maximum preprocess-
-              ing) to 100 (no preprocessing, the default). The  typical  value
-              is  around  60.  Note  that lossy with -q 100 can at times yield
-              better results.
+              Specify the level of near-lossless image preprocessing. This op-
+              tion adjusts pixel values to help compressibility, but has mini-
+              mal impact on the visual quality. It triggers lossless  compres-
+              sion  mode automatically. The range is 0 (maximum preprocessing)
+              to 100 (no preprocessing, the default).  The  typical  value  is
+              around 60. Note that lossy with -q 100 can at times yield better
+              results.
 
        -q float
               Specify the compression factor for RGB channels  between  0  and
@@ -56,14 +56,14 @@ OPTIONS
               In  case of lossy compression (default), a small factor produces
               a smaller file with lower quality. Best quality is  achieved  by
               using a value of 100.
-              In  case  of  lossless  compression  (specified by the -lossless
-              option), a small factor enables faster  compression  speed,  but
-              produces  a  larger  file.   Maximum  compression is achieved by
-              using a value of 100.
+              In  case of lossless compression (specified by the -lossless op-
+              tion), a small factor enables faster compression speed, but pro-
+              duces a larger file.  Maximum compression is achieved by using a
+              value of 100.
 
-       -z int Switch on lossless compression mode  with  the  specified  level
-              between  0  and  9,  with level 0 being the fastest, 9 being the
-              slowest. Fast mode produces larger file size than slower ones. A
+       -z int Switch on lossless compression mode with the specified level be-
+              tween 0 and 9, with level 0 being the fastest, 9 being the slow-
+              est. Fast mode produces larger file size  than  slower  ones.  A
               good  default  is  -z 6.  This option is actually a shortcut for
               some predefined settings for quality and method. If  options  -q
               or  -m are subsequently used, they will invalidate the effect of
@@ -86,10 +86,10 @@ OPTIONS
               the trade off between encoding speed  and  the  compressed  file
               size  and  quality.   Possible values range from 0 to 6. Default
               value is 4.  When higher values are used, the encoder will spend
-              more  time  inspecting  additional  encoding  possibilities  and
-              decide on the quality gain.  Lower value can  result  in  faster
-              processing  time  at  the  expense of larger file size and lower
-              compression quality.
+              more  time  inspecting additional encoding possibilities and de-
+              cide on the quality gain.  Lower value can result in faster pro-
+              cessing  time  at the expense of larger file size and lower com-
+              pression quality.
 
        -resize width height
               Resize the source to a rectangle with size width x  height.   If
@@ -108,17 +108,17 @@ OPTIONS
               Reduce  memory  usage of lossy encoding by saving four times the
               compressed size (typically). This will make the encoding  slower
               and  the  output slightly different in size and distortion. This
-              flag is only effective for methods 3  and  up,  and  is  off  by
-              default.  Note  that  leaving  this flag off will have some side
-              effects on the bitstream: it forces certain  bitstream  features
-              like  number  of  partitions  (forced  to  1).  Note that a more
-              detailed report of bitstream size is printed by cwebp when using
+              flag is only effective for methods 3 and up, and is off  by  de-
+              fault.  Note  that leaving this flag off will have some side ef-
+              fects on the bitstream: it  forces  certain  bitstream  features
+              like  number  of  partitions (forced to 1). Note that a more de-
+              tailed report of bitstream size is printed by cwebp  when  using
               this option.
 
 
    LOSSY OPTIONS
-       These  options  are  only  effective  when  doing  lossy  encoding (the
-       default, with or without alpha).
+       These  options  are  only  effective when doing lossy encoding (the de-
+       fault, with or without alpha).
 
 
        -size int
@@ -144,8 +144,8 @@ OPTIONS
               ity.
 
        -jpeg_like
-              Change  the  internal  parameter  mapping  to  better  match the
-              expected size of JPEG compression. This flag will generally pro-
+              Change  the  internal  parameter mapping to better match the ex-
+              pected size of JPEG compression. This flag will  generally  pro-
               duce  an output file of similar size to its JPEG equivalent (for
               the same -q setting), but with less visual distortion.
 
@@ -187,8 +187,8 @@ OPTIONS
 
        -segments int
               Change  the  number of partitions to use during the segmentation
-              of the sns algorithm. Segments  should  be  in  range  1  to  4.
-              Default value is 4.  This option has no effect for methods 3 and
+              of the sns algorithm. Segments should be in range 1  to  4.  De-
+              fault  value  is 4.  This option has no effect for methods 3 and
               up, unless -low_memory is used.
 
        -partition_limit int

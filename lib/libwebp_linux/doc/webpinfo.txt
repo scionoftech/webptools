@@ -41,8 +41,8 @@ OPTIONS
 
 
 INPUT
-       Input files in WebP format.  Input  files  must  come  last,  following
-       options (if any). There can be multiple input files.
+       Input files in WebP format. Input files must come last,  following  op-
+       tions (if any). There can be multiple input files.
 
 
 BUGS
@@ -64,8 +64,8 @@ AUTHORS
        The   latest  source  tree  is  available  at  https://chromium.google-
        source.com/webm/libwebp
 
-       This manual page was written by  Hui  Su  <huisu@google.com>,  for  the
-       Debian project (and may be used by others).
+       This manual page was written by Hui Su <huisu@google.com>, for the  De-
+       bian project (and may be used by others).
 
 
 SEE ALSO

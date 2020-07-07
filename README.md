@@ -1,4 +1,4 @@
-[Webptools v0.0.2](https://pypi.org/project/webptools/)
+[Webptools v0.0.3](https://pypi.org/project/webptools/)
 
 webptools is a Webp image conversion package for python.
 
@@ -16,7 +16,7 @@ For creating animated webp image using webp images, please read this documentati
 
 
 ## What's New 
-* Precompiled executables of WebP(v1.0.3) added
+* Precompiled executables of WebP(v1.1.0) added
 
 
 # How to use
@@ -27,11 +27,11 @@ For creating animated webp image using webp images, please read this documentati
 
 ```python
 
-from webptools import webplib as webp
+from webptools import cwebp
 
 # pass input_image(.jpeg,.pnp .....) path ,
 # output_image(give path where to save and image file name with .webp file type extension)
-print(webp.cwebp("python_logo.jpg", "python_logo.webp", "-q 80"))
+print(cwebp("python_logo.jpg", "python_logo.webp", "-q 80"))
 
 
 ```
@@ -42,10 +42,10 @@ print(webp.cwebp("python_logo.jpg", "python_logo.webp", "-q 80"))
 
 ```python
 
-from webptools import webplib as webp
+from webptools import dwebp
 
 # pass input_image(.webp image) path ,output_image(.jpeg,.pnp .....)
-print(webp.dwebp("python_logo.webp","python_logo.jpg","-o"))
+print(dwebp("python_logo.webp","python_logo.jpg","-o"))
 
 ```
 
@@ -54,10 +54,10 @@ print(webp.dwebp("python_logo.webp","python_logo.jpg","-o"))
 ## Convert gif image to webp
 
 ```python
-from webptools import webplib as webp
+from webptools import gifwebp
 
 # pass input_image(.gif) path ,output_image(give path where to save and image file name with .webp file type extension)
-print(webp.gifwebp("linux_logo.gif","linux_logo.webp","-q 80"))
+print(gifwebp("linux_logo.gif","linux_logo.webp","-q 80"))
 ```
 
 # webpmux
@@ -65,42 +65,42 @@ print(webp.gifwebp("linux_logo.gif","linux_logo.webp","-q 80"))
 ## Add ICC profile,XMP metadata and EXIF metadata
 
 ```python
-from webptools import webplib as webp
+from webptools import webpmux_add
 
 # pass input_image(.webp image) path,output_image,set options(icc image profile,XMP metadata or EXIF metadata) and file.
 # for options use keywords as below
 # for ICC: icc
 # for XMP metadata: xmp
 # for EXIF metadata: exif
-print(webp.webpmux_add("in.webp","icc_container.webp","image_profile.icc","icc"))
+print(webpmux_add("in.webp","icc_container.webp","image_profile.icc","icc"))
 ```
 
 ## Extract ICC profile,XMP metadata and EXIF metadata
 
 ```python
 
-from webptools import webplib as webp
+from webptools import webpmux_extract
 
 # pass input_image(.webp image) path,output_image,set options(icc image profile,XMP metadata or EXIF metadata) and file.
 # for options use keywords as below
 # for ICC: icc
 # for XMP metadata: xmp
 # for EXIF metadata: exif
-print(webp.webpmux_extract("anim_container.webp","image_profile.icc","icc"))
+print(webpmux_extract("anim_container.webp","image_profile.icc","icc"))
 ```
 
 ## Strip ICC profile,XMP metadata and EXIF metadata
 
 ```python
 
-from webptools import webplib as webp
+from webptools import webpmux_strip
 
 # pass input_image(.webp image) path,output_image,set options(icc image profile,XMP metadata or EXIF metadata) and file.
 # for options use keywords as below
 # for ICC: icc
 # for XMP metadata: xmp
 # for EXIF metadata: exif
-print(webp.webpmux_strip("icc_container.webp","without_icc.webp","icc"))
+print(webpmux_strip("icc_container.webp","without_icc.webp","icc"))
 
 
 ```
@@ -109,7 +109,7 @@ print(webp.webpmux_strip("icc_container.webp","without_icc.webp","icc"))
 
 ```python
 
-from webptools import webplib as webp
+from webptools import webpmux_animate
 
 # pass input_images(.webp image) path with FRAME_OPTIONS, as array,ouput image will be animated .webp image
 
@@ -142,7 +142,7 @@ from webptools import webplib as webp
 # the Alpha, Red, Green and Blue component values respectively [Default: 255,255,255,255].
 
 input=["./frames/tmp-0.webp +100","./frames/tmp-1.webp +100","./frames/tmp-2.webp +100"]
-print(webp.webpmux_animate(input,"anim_container.webp","10","255,255,255,255"))
+print(webpmux_animate(input,"anim_container.webp","10","255,255,255,255"))
 
 ```
 
@@ -150,10 +150,10 @@ print(webp.webpmux_animate(input,"anim_container.webp","10","255,255,255,255"))
 
 ```python
 
-from webptools import webplib as webp
+from webptools import webpmux_getframe
 
 # pass input_image(.webp image) path ,output_image and frame number
-print(webp.webpmux_getframe("anim_container.webp","frame_2.webp","2"))
+print(webpmux_getframe("anim_container.webp","frame_2.webp","2"))
 
 
 ```

@@ -38,23 +38,6 @@ include lib/libwebp_osx/doc/*.txt
 include lib/libwebp_osx/include/webp/*.h
 include lib/libwebp_osx/lib/*.a
 
-
-include lib/libwebp_win32/bin/anim_diff.exe
-include lib/libwebp_win32/bin/anim_dump.exe
-include lib/libwebp_win32/bin/cwebp.exe
-include lib/libwebp_win32/bin/dwebp.exe
-include lib/libwebp_win32/bin/freeglut.dll
-include lib/libwebp_win32/bin/get_disto.exe
-include lib/libwebp_win32/bin/gif2webp.exe
-include lib/libwebp_win32/bin/img2webp.exe
-include lib/libwebp_win32/bin/vwebp.exe
-include lib/libwebp_win32/bin/webp_quality.exe
-include lib/libwebp_win32/bin/webpinfo.exe
-include lib/libwebp_win32/bin/webpmux.exe
-
-include lib/libwebp_win32/include/webp/*.h
-include lib/libwebp_win32/lib/*.lib
-
 include lib/libwebp_win64/bin/anim_diff.exe
 include lib/libwebp_win64/bin/anim_dump.exe
 include lib/libwebp_win64/bin/cwebp.exe

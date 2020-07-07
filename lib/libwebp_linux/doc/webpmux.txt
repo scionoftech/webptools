@@ -3,8 +3,8 @@ WEBPMUX(1)                  General Commands Manual                 WEBPMUX(1)
 
 
 NAME
-       webpmux  -  create  animated  WebP files from non-animated WebP images,
-       extract frames from animated WebP images, and manage XMP/EXIF  metadata
+       webpmux - create animated WebP files from non-animated WebP images, ex-
+       tract frames from animated WebP images, and  manage  XMP/EXIF  metadata
        and ICC profile.
 
 SYNOPSIS
@@ -24,8 +24,8 @@ DESCRIPTION
 
        webpmux can be used to create/extract from animated WebP files, as well
        as to add/extract/strip XMP/EXIF metadata and ICC profile.  If a single
-       file  name  (not  starting  with  the character '-') is supplied as the
-       argument, the command line arguments are actually tokenized  from  this
+       file  name (not starting with the character '-') is supplied as the ar-
+       gument, the command line arguments are  actually  tokenized  from  this
        file.   This  allows  for easy scripting or using large number of argu-
        ments.
 
@@ -77,8 +77,8 @@ OPTIONS
               duration  is  the  duration  for  the  interval  in milliseconds
               (mandatory).  Must be non-negative.
               start is the starting frame index of the interval (optional).
-              end is the  ending  frame  index  (inclusive)  of  the  interval
-              (optional).
+              end is the ending frame index (inclusive) of the  interval  (op-
+              tional).
 
        The three typical usages of this option are:
               -duration d
@@ -108,8 +108,8 @@ OPTIONS
               for NONE or 1 for BACKGROUND) and 'bi' is  the  blending  method
               for this frame (+b for BLEND or -b for NO_BLEND).  Argument 'bi'
               can be omitted and will default to +b (BLEND).  Also,  'mi'  can
-              be  omitted  if  'bi'  is  omitted and will default to 0 (NONE).
-              Finally, if 'mi' and 'bi' are omitted then 'xi' and 'yi' can  be
+              be omitted if 'bi' is omitted and will default to 0 (NONE).  Fi-
+              nally, if 'mi' and 'bi' are omitted then 'xi' and  'yi'  can  be
               omitted and will default to +0+0.
 
        -loop n
@@ -120,8 +120,8 @@ OPTIONS
        -bgcolor A,R,G,B
               Background color of the canvas.
               where:  'A', 'R', 'G' and 'B' are integers in the range 0 to 255
-              specifying the Alpha,  Red,  Green  and  Blue  component  values
-              respectively [Default: 255,255,255,255].
+              specifying the Alpha, Red, Green and Blue component  values  re-
+              spectively [Default: 255,255,255,255].
 
 
    INPUT

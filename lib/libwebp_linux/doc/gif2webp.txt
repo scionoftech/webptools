@@ -23,10 +23,10 @@ OPTIONS
 
        -- string
               Explicitly  specify the input file. This option is useful if the
-              input file starts with an '-' for  instance.  This  option  must
-              appear  last.   Any  other options afterward will be ignored. If
-              the input file is "-", the data will be read from stdin  instead
-              of a file.
+              input file starts with an '-' for instance. This option must ap-
+              pear  last.  Any other options afterward will be ignored. If the
+              input file is "-", the data will be read from stdin instead of a
+              file.
 
        -h, -help
               Usage information.
@@ -43,9 +43,9 @@ OPTIONS
        -q float
               Specify  the  compression  factor for RGB channels between 0 and
               100. The default is 75.
-              In case  of  lossless  compression  (default),  a  small  factor
-              enables  faster  compression  speed, but produces a larger file.
-              Maximum compression is achieved by using a value of 100.
+              In case of lossless compression (default), a  small  factor  en-
+              ables faster compression speed, but produces a larger file. Max-
+              imum compression is achieved by using a value of 100.
               In case of lossy compression (specified by the -lossy option), a
               small  factor  produces  a smaller file with lower quality. Best
               quality is achieved by using a value of 100.
@@ -54,10 +54,10 @@ OPTIONS
               the  trade  off  between  encoding speed and the compressed file
               size and quality.  Possible values range from 0  to  6.  Default
               value is 4.  When higher values are used, the encoder will spend
-              more  time  inspecting  additional  encoding  possibilities  and
-              decide  on  the  quality gain.  Lower value can result is faster
-              processing time at the expense of larger  file  size  and  lower
-              compression quality.
+              more time inspecting additional encoding possibilities  and  de-
+              cide on the quality gain.  Lower value can result is faster pro-
+              cessing time at the expense of larger file size and  lower  com-
+              pression quality.
 
        -min_size
               Encode  image  to achieve smallest size. This disables key frame
@@ -95,8 +95,8 @@ OPTIONS
 
        -metadata string
               A comma separated list of metadata to copy from the input to the
-              output if present.  Valid values:  all,  none,  icc,  xmp.   The
-              default is xmp.
+              output if present.  Valid values: all, none, icc, xmp.  The  de-
+              fault is xmp.
 
        -f int For  lossy encoding only (specified by the -lossy option). Spec-
               ify the strength of the deblocking filter, between 0 (no filter-

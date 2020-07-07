@@ -50,10 +50,10 @@ OPTIONS
 
        -- string
               Explicitly  specify the input file. This option is useful if the
-              input file starts with an '-' for  instance.  This  option  must
-              appear  last.   Any  other options afterward will be ignored. If
-              the input file is "-", the data will be read from stdin  instead
-              of a file.
+              input file starts with an '-' for instance. This option must ap-
+              pear  last.  Any other options afterward will be ignored. If the
+              input file is "-", the data will be read from stdin instead of a
+              file.
 
 
 
