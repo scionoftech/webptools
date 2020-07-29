@@ -28,7 +28,7 @@ def cwebp(input_image: str, output_image: str, option: str) -> Dict:
 # output_image: output image(.jpeg, .pnp ....)
 # option: options and quality,it should be given between 0 to 100
 def dwebp(input_image: str, output_image: str, option: str) -> Dict:
-    cmd = f"{getdwebp()} {input_image} {option} {output_image}"
+    cmd = f'"{getdwebp()}" "{input_image}" "{option}" "{output_image}"'
     p = subprocess.Popen(cmd, shell=True, stdin=None, stdout=subprocess.PIPE,
                          stderr=subprocess.PIPE)
     (stdout, stderr) = p.communicate()
