@@ -5,7 +5,7 @@ with open('README.md') as f:
 
 setuptools.setup(
     name="webptools",
-    version="0.0.4",
+    version="0.0.5",
     scripts=['webptools/webplib.py'],
     author="Sai Kumar Yava",
     author_email="saikumar.geek@gmail.com",
@@ -18,7 +18,7 @@ setuptools.setup(
     package_data={'': ['lib/*']},
     include_package_data=True,
     keywords=['webp', 'converter', 'image'],
-    install_requires=["uuid", "base64"],
+    install_requires=["uuid"],
     license='MIT',
     classifiers=[
         'Development Status :: 5 - Production/Stable',
