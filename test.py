@@ -1,8 +1,11 @@
 from os import sep
 from pathlib import Path
-from webptools import (cwebp, dwebp, gifwebp, webpmux_add, webpmux_extract,
-                       webpmux_strip, webpmux_animate, webpmux_getframe)
+import base64
+from webptools import cwebp, dwebp, gifwebp, webpmux_add, webpmux_extract
+from webptools import webpmux_strip, webpmux_animate, webpmux_getframe
+from webptools import base64str2webp_base64str, grant_permission
 
+grant_permission()
 # *************** cwebp ************** #
 
 # pass input_image(.jpeg,.pnp .....) path ,
@@ -11,24 +14,24 @@ from webptools import (cwebp, dwebp, gifwebp, webpmux_add, webpmux_extract,
 print(cwebp(
     f"{str(Path(__file__).parent.parent)}{sep}extras{sep}python_logo.jpg",
     f"{str(Path(__file__).parent.parent)}{sep}extras{sep}python_logo.webp",
-    "-q 80"))
+    "-q 80",logging="-v"))
 
 # ******* dwebp ************ #
 
 # pass input_image(.webp image) path ,output_image(.jpeg,.pnp .....)
-print(dwebp(
-    f"{str(Path(__file__).parent.parent)}{sep}extras{sep}python_logo.webp",
-    f"{str(Path(__file__).parent.parent)}{sep}extras{sep}python_logo.jpg",
-    "-o"))
+# print(dwebp(
+#     f"{str(Path(__file__).parent.parent)}{sep}extras{sep}python_logo.webp",
+#     f"{str(Path(__file__).parent.parent)}{sep}extras{sep}python_logo.jpg",
+#     "-o"))
 
 # ***************** gif2webp *********************** #
 
 # pass input_image(.gif) path ,output_image(give path where to save and
 # image file name with .webp file type extension)
-print(gifwebp(
-    f"{str(Path(__file__).parent.parent)}{sep}extras{sep}linux_logo.gif",
-    f"{str(Path(__file__).parent.parent)}{sep}extras{sep}linux_logo.webp",
-    "-q 80"))
+# print(gifwebp(
+#     f"{str(Path(__file__).parent.parent)}{sep}extras{sep}linux_logo.gif",
+#     f"{str(Path(__file__).parent.parent)}{sep}extras{sep}linux_logo.webp",
+#     "-q 80"))
 
 # *************** webpmux ********************* #
 
@@ -40,7 +43,7 @@ print(gifwebp(
 # for ICC: icc
 # for XMP metadata: xmp
 # for EXIF metadata: exif
-print(webpmux_add("in.webp", "icc_container.webp", "image_profile.icc", "icc"))
+# print(webpmux_add("in.webp", "icc_container.webp", "image_profile.icc", "icc"))
 
 # %%%%%%%%%%%%%%%% Extract ICC profile,XMP metadata and EXIF metadata
 
@@ -50,7 +53,7 @@ print(webpmux_add("in.webp", "icc_container.webp", "image_profile.icc", "icc"))
 # for ICC: icc
 # for XMP metadata: xmp
 # for EXIF metadata: exif
-print(webpmux_extract("anim_container.webp", "image_profile.icc", "icc"))
+# print(webpmux_extract("anim_container.webp", "image_profile.icc", "icc"))
 
 # %%%%%%%%%%%%%%%%%%%%% Strip ICC profile,XMP metadata and EXIF metadata
 
@@ -60,7 +63,7 @@ print(webpmux_extract("anim_container.webp", "image_profile.icc", "icc"))
 # for ICC: icc
 # for XMP metadata: xmp
 # for EXIF metadata: exif
-print(webpmux_strip("icc_container.webp", "without_icc.webp", "icc"))
+# print(webpmux_strip("icc_container.webp", "without_icc.webp", "icc"))
 
 # %%%%%%%%%%%%%%%%%%% Create an animated WebP file from Webp images
 
@@ -104,11 +107,22 @@ print(webpmux_strip("icc_container.webp", "without_icc.webp", "icc"))
 # the Alpha, Red, Green and Blue component values respectively
 # [Default: 255,255,255,255].
 
-input = ["./frames/tmp-0.webp +100", "./frames/tmp-1.webp +100",
-         "./frames/tmp-2.webp +100"]
-print(webpmux_animate(input, "anim_container.webp", "10", "255,255,255,255"))
+# input = ["./frames/tmp-0.webp +100", "./frames/tmp-1.webp +100",
+#          "./frames/tmp-2.webp +100"]
+# print(webpmux_animate(input, "anim_container.webp", "10", "255,255,255,255"))
 
 # %%%%%%%%%%%%%%%%%%%%% Get the a frame from an animated WebP file
 
 # pass input_image(.webp image) path ,output_image and frame number
-print(webpmux_getframe("anim_container.webp", "frame_2.webp", "2"))
+# print(webpmux_getframe("anim_container.webp", "frame_2.webp", "2"))
+
+# *************** base64 to webp base64 ************** #
+
+# with open(
+#         r"C:\Users\user\python_logo.jpg",
+#         "rb") as image_file:
+#     encoded_string = base64.b64encode(image_file.read())
+# base64_image = encoded_string.decode('utf-8')
+#
+# print(str2webpstr(base64str=base64_image, image_type="jpg",
+#                   option="-q 80", logging="-v"))

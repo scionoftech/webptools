@@ -1,25 +1,42 @@
-[Webptools v0.0.3](https://pypi.org/project/webptools/)
+[Webptools v0.0.4](https://pypi.org/project/webptools/)
 
-webptools is a Webp image conversion package for python.
+webptools is a Webp image conversion package for the python.
 
 Convert JPG,PNG.. images to webp image format
 
-This library uses precompiled executables of WebP for more info visit [WebP](https://developers.google.com/speed/webp)
+This library uses precompiled executables of WebP(v1.1.0) for more info
+visit [WebP](https://developers.google.com/speed/webp)
 
-For converting other image formats to webp, please read this documentation  [cwebp Encoder](https://developers.google.com/speed/webp/docs/cwebp)
+For converting other image formats to webp, please read this
+documentation  [cwebp Encoder](https://developers.google.com/speed/webp/docs/cwebp)
 
-For converting webp image to other image format, please read this documentation  [dwebp Encoder](https://developers.google.com/speed/webp/docs/dwebp)
+For converting webp image to other image format, please read this
+documentation  [dwebp Encoder](https://developers.google.com/speed/webp/docs/dwebp)
 
-For converting gif image to webp, please read this documentation [gif2webp Converter](https://developers.google.com/speed/webp/docs/gif2webp)
+For converting gif image to webp, please read this
+documentation [gif2webp Converter](https://developers.google.com/speed/webp/docs/gif2webp)
 
-For creating animated webp image using webp images, please read this documentation [webpmux Muxer](https://developers.google.com/speed/webp/docs/webpmux)
+For creating animated webp image using webp images, please read this
+documentation [webpmux Muxer](https://developers.google.com/speed/webp/docs/webpmux)
 
+## What's New
 
-## What's New 
-* Precompiled executables of WebP(v1.1.0) added
-
+* webp executables permission issue fixed
+* base64 to webp base64 added
+* logging options added
 
 # How to use
+
+## Fix Permission Issue
+
+```python
+
+from webptools import grant_permission
+
+# this will grant 755 permission to webp executables
+grant_permission()
+
+```
 
 # cwebp
 
@@ -31,8 +48,29 @@ from webptools import cwebp
 
 # pass input_image(.jpeg,.pnp .....) path ,
 # output_image(give path where to save and image file name with .webp file type extension)
-print(cwebp("python_logo.jpg", "python_logo.webp", "-q 80"))
+print(cwebp(input_image="python_logo.jpg", output_image="python_logo.webp",
+            option="-q 80", logging="-v"))
 
+
+```
+
+## Convert base64 image to webp base64
+
+```python
+
+from webptools import base64str2webp_base64str
+
+# pass base64 image, image type, webp options,
+# for the conversion temp location need 
+
+# use the default temp path for conversion
+print(
+    base64str2webp_base64str(base64str="", image_type="jpg", option="-q 80",
+                             logging="-v"))
+# use the custom temp path for conversion
+print(base64str2webp_base64str(base64str="", image_type="jpg", option="-q 80",
+                               temp_path="./temp",
+                               logging="-v"))
 
 ```
 
@@ -45,7 +83,8 @@ print(cwebp("python_logo.jpg", "python_logo.webp", "-q 80"))
 from webptools import dwebp
 
 # pass input_image(.webp image) path ,output_image(.jpeg,.pnp .....)
-print(dwebp("python_logo.webp","python_logo.jpg","-o"))
+print(dwebp(input_image="python_logo.webp", output_image="python_logo.jpg",
+            option="-o", logging="-v"))
 
 ```
 
@@ -57,7 +96,8 @@ print(dwebp("python_logo.webp","python_logo.jpg","-o"))
 from webptools import gifwebp
 
 # pass input_image(.gif) path ,output_image(give path where to save and image file name with .webp file type extension)
-print(gifwebp("linux_logo.gif","linux_logo.webp","-q 80"))
+print(gifwebp(input_image="linux_logo.gif", output_image="linux_logo.webp",
+              option="-q 80", logging="-v"))
 ```
 
 # webpmux
@@ -72,7 +112,8 @@ from webptools import webpmux_add
 # for ICC: icc
 # for XMP metadata: xmp
 # for EXIF metadata: exif
-print(webpmux_add("in.webp","icc_container.webp","image_profile.icc","icc"))
+print(webpmux_add(input_image="in.webp", output_image="icc_container.webp",
+                  icc_profile="image_profile.icc", option="icc", logging="-v"))
 ```
 
 ## Extract ICC profile,XMP metadata and EXIF metadata
@@ -86,7 +127,9 @@ from webptools import webpmux_extract
 # for ICC: icc
 # for XMP metadata: xmp
 # for EXIF metadata: exif
-print(webpmux_extract("anim_container.webp","image_profile.icc","icc"))
+print(webpmux_extract(input_image="anim_container.webp",
+                      icc_profile="image_profile.icc", option="icc",
+                      logging="-v"))
 ```
 
 ## Strip ICC profile,XMP metadata and EXIF metadata
@@ -100,7 +143,9 @@ from webptools import webpmux_strip
 # for ICC: icc
 # for XMP metadata: xmp
 # for EXIF metadata: exif
-print(webpmux_strip("icc_container.webp","without_icc.webp","icc"))
+print(webpmux_strip(input_image="icc_container.webp",
+                    output_image="without_icc.webp", option="icc",
+                    logging="-v"))
 
 
 ```
@@ -141,8 +186,10 @@ from webptools import webpmux_animate
 # Background color of the canvas. Where: A, R, G and B are integers in the range 0 to 255 specifying
 # the Alpha, Red, Green and Blue component values respectively [Default: 255,255,255,255].
 
-input=["./frames/tmp-0.webp +100","./frames/tmp-1.webp +100","./frames/tmp-2.webp +100"]
-print(webpmux_animate(input,"anim_container.webp","10","255,255,255,255"))
+input = ["./frames/tmp-0.webp +100", "./frames/tmp-1.webp +100",
+         "./frames/tmp-2.webp +100"]
+print(webpmux_animate(input_images=input, output_image="anim_container.webp",
+                      loop="10", bgcolor="255,255,255,255", logging="-v"))
 
 ```
 
@@ -153,7 +200,9 @@ print(webpmux_animate(input,"anim_container.webp","10","255,255,255,255"))
 from webptools import webpmux_getframe
 
 # pass input_image(.webp image) path ,output_image and frame number
-print(webpmux_getframe("anim_container.webp","frame_2.webp","2"))
+print(webpmux_getframe(input_image="anim_container.webp",
+                       output_image="frame_2.webp", frame_number="2",
+                       logging="-v"))
 
 
 ```
@@ -166,4 +215,4 @@ $ pip install webptools
 
 ## License
 
-  [MIT](LICENSE)
+[MIT](LICENSE)
