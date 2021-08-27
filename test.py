@@ -11,10 +11,10 @@ grant_permission()
 # pass input_image(.jpeg,.pnp .....) path ,
 # output_image(give path where to save and image file name with .webp
 # file type extension)
-print(cwebp(
-    f"{str(Path(__file__).parent.parent)}{sep}extras{sep}python_logo.jpg",
-    f"{str(Path(__file__).parent.parent)}{sep}extras{sep}python_logo.webp",
-    "-q 80",logging="-v"))
+# print(cwebp(
+#     f"{str(Path(__file__).parent.parent)}{sep}extras{sep}python_logo.jpg",
+#     f"{str(Path(__file__).parent.parent)}{sep}extras{sep}python_logo.webp",
+#     "-q 80",logging="-v",bin_path="/home/sky/Desktop/webp/lib/libwebp_linux/bin/cwebp"))
 
 # ******* dwebp ************ #
 

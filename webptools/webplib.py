@@ -13,7 +13,7 @@ def grant_permission():
     Change permission of webp executables to 755
     :return:
     """
-    files = [getcwebp(), getdwebp(), getgifwebp(), getwebpmux()]
+    files = [getcwebp(bin_path=None), getdwebp(bin_path=None), getgifwebp(bin_path=None), getwebpmux(bin_path=None)]
     for file in files:
         os.chmod(file, 0o755)
 
@@ -38,7 +38,7 @@ def get_project_path() -> str:
 
 def base64str2webp_base64str(base64str: str, image_type: str, option: str,
                              temp_path: str = None,
-                             logging: str = "-v") -> Tuple:
+                             logging: str = "-v", bin_path: str = None) -> Tuple:
     """
     Convert bas64 image to webp base64
     :param base64str:
@@ -46,6 +46,7 @@ def base64str2webp_base64str(base64str: str, image_type: str, option: str,
     :param option:
     :param temp_path:
     :param logging:
+    :param bin_path:
     :return:
     """
     if not temp_path:
@@ -62,7 +63,7 @@ def base64str2webp_base64str(base64str: str, image_type: str, option: str,
         f.write(imgdata)
 
     results = cwebp(input_image=input_file, output_image=output_file,
-                    option=option, logging=logging)
+                    option=option, logging=logging, bin_path=bin_path)
 
     if results["exit_code"] == 0:
         with open(output_file, "rb") as image_file:
@@ -80,7 +81,7 @@ def base64str2webp_base64str(base64str: str, image_type: str, option: str,
 # ****************** cwebp *********************** #
 
 def cwebp(input_image: str, output_image: str, option: str,
-          logging: str = "-v") -> Dict:
+          logging: str = "-v", bin_path: str = None) -> Dict:
     """
     now convert image to .webp format
 
@@ -92,9 +93,10 @@ def cwebp(input_image: str, output_image: str, option: str,
     :param output_image:
     :param option:
     :param logging:
+    :param bin_path:
     :return:
     """
-    cmd = f"{getcwebp()} {option} {input_image} -o {output_image} {logging}"
+    cmd = f"{getcwebp(bin_path=bin_path)} {option} {input_image} -o {output_image} {logging}"
     p = subprocess.Popen(cmd, shell=True, stdin=None, stdout=subprocess.PIPE,
                          stderr=subprocess.PIPE)
     (stdout, stderr) = p.communicate()
@@ -106,7 +108,7 @@ def cwebp(input_image: str, output_image: str, option: str,
 # ****************** dwebp *********************** #
 
 def dwebp(input_image: str, output_image: str, option: str,
-          logging: str = "-v") -> Dict:
+          logging: str = "-v", bin_path: str = None) -> Dict:
     """
     now convert .webp to other image format
 
@@ -117,9 +119,10 @@ def dwebp(input_image: str, output_image: str, option: str,
     :param output_image:
     :param option:
     :param logging:
+    :param bin_path:
     :return:
     """
-    cmd = f"{getdwebp()} {input_image} {option} {output_image} {logging}"
+    cmd = f"{getdwebp(bin_path=bin_path)} {input_image} {option} {output_image} {logging}"
     p = subprocess.Popen(cmd, shell=True, stdin=None, stdout=subprocess.PIPE,
                          stderr=subprocess.PIPE)
     (stdout, stderr) = p.communicate()
@@ -131,7 +134,7 @@ def dwebp(input_image: str, output_image: str, option: str,
 # ****************** gif2webp *********************** #
 
 def gifwebp(input_image: str, output_image: str, option: str,
-            logging: str = "-v") -> Dict:
+            logging: str = "-v", bin_path: str = None) -> Dict:
     """
     now convert .gif image to .webp format
 
@@ -142,9 +145,10 @@ def gifwebp(input_image: str, output_image: str, option: str,
     :param output_image:
     :param option:
     :param logging:
+    :param bin_path:
     :return:
     """
-    cmd = f"{getgifwebp()} {option} {input_image} -o {output_image} {logging}"
+    cmd = f"{getgifwebp(bin_path=bin_path)} {option} {input_image} -o {output_image} {logging}"
     p = subprocess.Popen(cmd, shell=True, stdin=None, stdout=subprocess.PIPE,
                          stderr=subprocess.PIPE)
     (stdout, stderr) = p.communicate()
@@ -156,7 +160,7 @@ def gifwebp(input_image: str, output_image: str, option: str,
 # ****************** webpmux *********************** #
 
 def webpmux_add(input_image: str, output_image: str, icc_profile: str,
-                option: str, logging: str = "-v") -> Dict:
+                option: str, logging: str = "-v", bin_path: str = None) -> Dict:
     """
     Add ICC profile,XMP metadata and EXIF metadata #
 
@@ -169,9 +173,10 @@ def webpmux_add(input_image: str, output_image: str, icc_profile: str,
     :param icc_profile:
     :param option:
     :param logging:
+    :param bin_path:
     :return:
     """
-    cmd = f"{getwebpmux()} -set {option} {icc_profile} {input_image} -o {output_image} {logging}"
+    cmd = f"{getwebpmux(bin_path=bin_path)} -set {option} {icc_profile} {input_image} -o {output_image} {logging}"
     p = subprocess.Popen(cmd, shell=True, stdin=None, stdout=subprocess.PIPE,
                          stderr=subprocess.PIPE)
     (stdout, stderr) = p.communicate()
@@ -181,7 +186,7 @@ def webpmux_add(input_image: str, output_image: str, icc_profile: str,
 
 
 def webpmux_extract(input_image: str, icc_profile: str, option: str,
-                    logging: str = "-v") -> Dict:
+                    logging: str = "-v", bin_path: str = None) -> Dict:
     """
     Extract ICC profile,XMP metadata and EXIF metadata
 
@@ -191,9 +196,10 @@ def webpmux_extract(input_image: str, icc_profile: str, option: str,
     :param icc_profile:
     :param option:
     :param logging:
+    :param bin_path:
     :return:
     """
-    cmd = f"{getwebpmux()} -get {option} {input_image} -o {icc_profile} {logging}"
+    cmd = f"{getwebpmux(bin_path=bin_path)} -get {option} {input_image} -o {icc_profile} {logging}"
     p = subprocess.Popen(cmd, shell=True, stdin=None, stdout=subprocess.PIPE,
                          stderr=subprocess.PIPE)
     (stdout, stderr) = p.communicate()
@@ -203,7 +209,7 @@ def webpmux_extract(input_image: str, icc_profile: str, option: str,
 
 
 def webpmux_strip(input_image: str, output_image: str, option: str,
-                  logging: str = "-v") -> Dict:
+                  logging: str = "-v", bin_path: str = None) -> Dict:
     """
     Strip ICC profile,XMP metadata and EXIF metadata
 
@@ -213,9 +219,10 @@ def webpmux_strip(input_image: str, output_image: str, option: str,
     :param output_image:
     :param option:
     :param logging:
+    :param bin_path:
     :return:
     """
-    cmd = f"{getwebpmux()} -strip {option} {input_image} -o {output_image} {logging}"
+    cmd = f"{getwebpmux(bin_path=bin_path)} -strip {option} {input_image} -o {output_image} {logging}"
     p = subprocess.Popen(cmd, shell=True, stdin=None, stdout=subprocess.PIPE,
                          stderr=subprocess.PIPE)
     (stdout, stderr) = p.communicate()
@@ -225,7 +232,7 @@ def webpmux_strip(input_image: str, output_image: str, option: str,
 
 
 def webpmux_animate(input_images: List, output_image: str, loop: str,
-                    bgcolor: str, logging: str = "-v") -> Dict:
+                    bgcolor: str, logging: str = "-v", bin_path: str = None) -> Dict:
     """
     Create an animated WebP file from Webp images
 
@@ -238,13 +245,14 @@ def webpmux_animate(input_images: List, output_image: str, loop: str,
     :param loop:
     :param bgcolor:
     :param logging:
+    :param bin_path:
     :return:
     """
     files = ""
     for frame in input_images:
         files += f" -frame {frame}"
 
-    cmd = f"{getwebpmux()} {files} -loop {loop} bgcolor {bgcolor} -o {output_image} {logging}"
+    cmd = f"{getwebpmux(bin_path=bin_path)} {files} -loop {loop} bgcolor {bgcolor} -o {output_image} {logging}"
     p = subprocess.Popen(cmd, shell=True, stdin=None, stdout=subprocess.PIPE,
                          stderr=subprocess.PIPE)
     (stdout, stderr) = p.communicate()
@@ -254,7 +262,7 @@ def webpmux_animate(input_images: List, output_image: str, loop: str,
 
 
 def webpmux_getframe(input_image: str, output_image: str,
-                     frame_number: str, logging: str = "-v") -> Dict:
+                     frame_number: str, logging: str = "-v", bin_path: str = None) -> Dict:
     """
     Get the a frame from an animated WebP file
 
@@ -265,9 +273,10 @@ def webpmux_getframe(input_image: str, output_image: str,
     :param output_image:
     :param frame_number:
     :param logging:
+    :param bin_path:
     :return:
     """
-    cmd = f"{getwebpmux()} -get frame {frame_number} {input_image} -o {output_image} {logging}"
+    cmd = f"{getwebpmux(bin_path=bin_path)} -get frame {frame_number} {input_image} -o {output_image} {logging}"
     p = subprocess.Popen(cmd, shell=True, stdin=None, stdout=subprocess.PIPE,
                          stderr=subprocess.PIPE)
     (stdout, stderr) = p.communicate()

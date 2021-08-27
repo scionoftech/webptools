@@ -1,4 +1,4 @@
-[Webptools v0.0.5](https://pypi.org/project/webptools/)
+[Webptools v0.0.6](https://pypi.org/project/webptools/)
 
 webptools is a Webp image conversion package for the python.
 
@@ -19,15 +19,16 @@ documentation [gif2webp Converter](https://developers.google.com/speed/webp/docs
 For creating animated webp image using webp images, please read this
 documentation [webpmux Muxer](https://developers.google.com/speed/webp/docs/webpmux)
 
-## What's New
-
-* webp executables permission issue fixed
-* base64 to webp base64 added
-* logging options added
 
 # How to use
 
-## Fix Permission Issue
+## Installation
+
+```shell
+$ pip install webptools
+```
+
+## Fix Permission Issue (if not using external executables)
 
 ```python
 
@@ -35,6 +36,14 @@ from webptools import grant_permission
 
 # this will grant 755 permission to webp executables
 grant_permission()
+
+```
+
+### Using External executables
+
+```python
+
+bin_path="libwebp_linux/bin/cwebp"
 
 ```
 
@@ -206,13 +215,3 @@ print(webpmux_getframe(input_image="anim_container.webp",
 
 
 ```
-
-## Installation
-
-```shell
-$ pip install webptools
-```
-
-## License
-
-[MIT](LICENSE)
