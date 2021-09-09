@@ -5,7 +5,7 @@ with open('README.md') as f:
 
 setuptools.setup(
     name="webptools",
-    version="0.0.6",
+    version="0.0.7",
     scripts=['webptools/webplib.py'],
     author="scionoftech",
     description="webptools is a Webp image conversion package for python",

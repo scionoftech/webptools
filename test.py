@@ -19,10 +19,10 @@ grant_permission()
 # ******* dwebp ************ #
 
 # pass input_image(.webp image) path ,output_image(.jpeg,.pnp .....)
-# print(dwebp(
-#     f"{str(Path(__file__).parent.parent)}{sep}extras{sep}python_logo.webp",
-#     f"{str(Path(__file__).parent.parent)}{sep}extras{sep}python_logo.jpg",
-#     "-o"))
+print(dwebp(
+    f"{str(Path(__file__).parent.parent)}{sep}extras{sep}python_logo.webp",
+    f"{str(Path(__file__).parent.parent)}{sep}extras{sep}python_logo.jpg",
+    "-o",logging="-v",bin_path="/home/sky/Desktop/webp/lib/libwebp_linux/bin/dwebp"))
 
 # ***************** gif2webp *********************** #
 
