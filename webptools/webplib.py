@@ -252,7 +252,7 @@ def webpmux_animate(input_images: List, output_image: str, loop: str,
     for frame in input_images:
         files += f" -frame {frame}"
 
-    cmd = f"{getwebpmux(bin_path=bin_path)} {files} -loop {loop} bgcolor {bgcolor} -o {output_image} {logging}"
+    cmd = f"{getwebpmux(bin_path=bin_path)} {files} -loop {loop} -bgcolor {bgcolor} -o {output_image} {logging}"
     p = subprocess.Popen(cmd, shell=True, stdin=None, stdout=subprocess.PIPE,
                          stderr=subprocess.PIPE)
     (stdout, stderr) = p.communicate()
