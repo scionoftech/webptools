@@ -160,7 +160,7 @@ def gifwebp(input_image: str, output_image: str, option: str,
 # ****************** webpmux *********************** #
 
 def webpmux_add(input_image: str, output_image: str, icc_profile: str,
-                option: str, logging: str = "-v", bin_path: str = None) -> Dict:
+                option: str, logging: str = "", bin_path: str = None) -> Dict:
     """
     Add ICC profile,XMP metadata and EXIF metadata #
 
@@ -186,7 +186,7 @@ def webpmux_add(input_image: str, output_image: str, icc_profile: str,
 
 
 def webpmux_extract(input_image: str, icc_profile: str, option: str,
-                    logging: str = "-v", bin_path: str = None) -> Dict:
+                    logging: str = "", bin_path: str = None) -> Dict:
     """
     Extract ICC profile,XMP metadata and EXIF metadata
 
@@ -209,7 +209,7 @@ def webpmux_extract(input_image: str, icc_profile: str, option: str,
 
 
 def webpmux_strip(input_image: str, output_image: str, option: str,
-                  logging: str = "-v", bin_path: str = None) -> Dict:
+                  logging: str = "", bin_path: str = None) -> Dict:
     """
     Strip ICC profile,XMP metadata and EXIF metadata
 
@@ -232,7 +232,7 @@ def webpmux_strip(input_image: str, output_image: str, option: str,
 
 
 def webpmux_animate(input_images: List, output_image: str, loop: str,
-                    bgcolor: str, logging: str = "-v", bin_path: str = None) -> Dict:
+                    bgcolor: str, logging: str = "", bin_path: str = None) -> Dict:
     """
     Create an animated WebP file from Webp images
 
@@ -262,7 +262,7 @@ def webpmux_animate(input_images: List, output_image: str, loop: str,
 
 
 def webpmux_getframe(input_image: str, output_image: str,
-                     frame_number: str, logging: str = "-v", bin_path: str = None) -> Dict:
+                     frame_number: str, logging: str = "", bin_path: str = None) -> Dict:
     """
     Get the a frame from an animated WebP file
 
