@@ -1,4 +1,4 @@
-[Webptools v0.0.7](https://pypi.org/project/webptools/)
+[Webptools v0.0.8](https://pypi.org/project/webptools/)
 
 webptools is a Webp image conversion package for the python.
 
@@ -122,7 +122,7 @@ from webptools import webpmux_add
 # for XMP metadata: xmp
 # for EXIF metadata: exif
 print(webpmux_add(input_image="in.webp", output_image="icc_container.webp",
-                  icc_profile="image_profile.icc", option="icc", logging="-v"))
+                  icc_profile="image_profile.icc", option="icc"))
 ```
 
 ## Extract ICC profile,XMP metadata and EXIF metadata
@@ -137,8 +137,7 @@ from webptools import webpmux_extract
 # for XMP metadata: xmp
 # for EXIF metadata: exif
 print(webpmux_extract(input_image="anim_container.webp",
-                      icc_profile="image_profile.icc", option="icc",
-                      logging="-v"))
+                      icc_profile="image_profile.icc", option="icc"))
 ```
 
 ## Strip ICC profile,XMP metadata and EXIF metadata
@@ -153,8 +152,7 @@ from webptools import webpmux_strip
 # for XMP metadata: xmp
 # for EXIF metadata: exif
 print(webpmux_strip(input_image="icc_container.webp",
-                    output_image="without_icc.webp", option="icc",
-                    logging="-v"))
+                    output_image="without_icc.webp", option="icc"))
 
 
 ```
@@ -198,7 +196,7 @@ from webptools import webpmux_animate
 input = ["./frames/tmp-0.webp +100", "./frames/tmp-1.webp +100",
          "./frames/tmp-2.webp +100"]
 print(webpmux_animate(input_images=input, output_image="anim_container.webp",
-                      loop="10", bgcolor="255,255,255,255", logging="-v"))
+                      loop="10", bgcolor="255,255,255,255"))
 
 ```
 
@@ -210,8 +208,7 @@ from webptools import webpmux_getframe
 
 # pass input_image(.webp image) path ,output_image and frame number
 print(webpmux_getframe(input_image="anim_container.webp",
-                       output_image="frame_2.webp", frame_number="2",
-                       logging="-v"))
+                       output_image="frame_2.webp", frame_number="2"))
 
 
 ```
