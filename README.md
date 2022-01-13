@@ -1,4 +1,4 @@
-[Webptools v0.0.8](https://pypi.org/project/webptools/)
+[Webptools v0.0.9](https://pypi.org/project/webptools/)
 
 webptools is a Webp image conversion package for the python.
 
